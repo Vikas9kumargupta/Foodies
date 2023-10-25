@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import com.example.yourfood.MainActivity
 import com.example.yourfood.R
 import com.example.yourfood.databinding.ActivitySplashScreen1Binding
@@ -18,7 +19,7 @@ class SplashScreen1 : AppCompatActivity() {
         binding = ActivitySplashScreen1Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        Handler().postDelayed({
+        Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, StartScreen::class.java)
             startActivity(intent)
             finish() // Close the splash screen activity
